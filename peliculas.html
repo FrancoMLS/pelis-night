@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PelisNight | Resultados</title>
+    <link rel="icon" href="img/image-PhotoRoom.png-PhotoRoom.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/261bda0ed4.js" crossorigin="anonymous"></script>
+    <script>
+        function volver(){
+            window.location.href = 'index.html'
+        }
+    </script>     
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/image-PhotoRoom.png-PhotoRoom.png" width="120px" alt="">
+        </div>
+    </header>    
+    <nav class="peliculashtml">
+        <div class="busqueda">
+            <button onclick="volver()">
+                <i class="fa-solid fa-arrow-left" style="color: #ffffff;"></i>
+            </button>
+        </div>
+        <div class="nombre">
+            <span id="cantidadResultadosPeliculas" style="display: none;"></span><h3>Resultados para <span id="resultadosPeliculas"></span></h3> 
+        </div>           
+    </nav>       
+       
+    <main>
+        <div id="container-paginacion">
+            <button onclick="paginaAnt()"><i class="fa-solid fa-arrow-left" style="color: #ffffff;"></i></button>
+            <span id="pagActual">1</span>
+            <button onclick="paginaSig()"><i class="fa-solid fa-arrow-right" style="color: #ffffff;"></i></button>
+        </div>
+
+        <div id="peliculas"></div>
+
+        <div id="container-paginacion">
+            <button onclick="paginaAnt()"><i class="fa-solid fa-arrow-left" style="color: #ffffff;"></i></button>
+            <span id="pagActual2">1</span>
+            <button onclick="paginaSig()"><i class="fa-solid fa-arrow-right" style="color: #ffffff;"></i></button>
+        </div>
+
+        <footer class="oscuro">
+            <div class="fotoFooter">
+                <a href="index.html"><img src="img/Pelis night-PhotoRoom.png-PhotoRoom.png" alt="Logo PelisNight" width="100px"></a>
+            </div>             
+            <div class="contactoFooter">
+                <br>
+                <i class="fa-brands fa-instagram" style="color: #000000;"></i> <a href="https://www.instagram.com/francolonelloserra/" target="_blank">francolonelloserra</a><br>
+                <i class="fa-brands fa-whatsapp" style="color: #000000;"></i> +54 9 11 6511-9442<br>
+                <i class="fa-solid fa-envelope" style="color: #000000;"></i> francolonelloserra@gmail.com
+            </div>
+        </footer>
+    </main>   
+</body>
+
+<script src="js/scriptPeliculas.js"></script>  
+<script>
+    window.addEventListener('scroll', function() {
+        var logo = document.querySelector('.logo');
+        var scrollPosition = window.scrollY;
+
+        if (scrollPosition > 50) {
+            logo.style.top = '-120px';
+        } else {
+            logo.style.top = '0';
+        }
+    });
+</script>
+</html>

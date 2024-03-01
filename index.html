@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pelis Night</title>
+    <link rel="icon" href="img/image-PhotoRoom.png-PhotoRoom.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/261bda0ed4.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="index">
+        <div class="logo">
+            <img class="scale-up-center" src="img/image-PhotoRoom.png-PhotoRoom.png" width="120px" alt="">
+        </div>
+        <div class="intro">
+            <h1>¡Bienvenido a PelisNight!</h1>
+            <br>
+            <p>Descubra un fascinante mundo de emociones en nuestra plataforma de películas. Desde éxitos de taquilla hasta joyas ocultas, te brindamos una experiencia única. Encuentra tus películas favoritas y sumérgete en el entretenimiento que te encanta.</p>
+            <br><br>
+            <p>Explore el contenido desplazándose hacia abajo y descubre tu próximo film favorito. ¡Tu viaje cinematográfico comienza aquí!</p>
+            <br><br>
+        </div>
+    </header>
+    <nav>
+        <form action="">
+            <span class="escritorio">
+                <img src="img/image-PhotoRoom.png-PhotoRoom.png" alt="" width="100px"><b>PelisNight</b>
+            </span>
+            <div class="buscar">
+                <input type="text" id="inputBuscar" placeholder="Buscar película..." oninput="buscarPeliculas()"> 
+                <button onclick="guardarValor(event)">
+                    <i class="fa-solid fa-magnifying-glass" style="color: #d1d1d1;"></i>
+                </button>
+                <ul id="sugerencias"></ul>
+            </div>
+            <span class="tablet"><b>PelisNight</b></span>
+            <div class="generos">
+                <label for="elemento">Género:</label>
+                <select id="menu" name="elemento">
+                    <option value="todas" selected>Todas</option>
+                    <option value="accion">Acción</option>
+                    <option value="aventura">Aventura</option>
+                    <option value="animacion">Animación</option>
+                    <option value="cienciaFiccion">Ciencia-ficción</option>
+                    <option value="comedia">Comedia</option>
+                    <option value="crimen">Crimen</option>
+                    <option value="documental">Documental</option>
+                    <option value="drama">Drama</option>
+                    <option value="familiar">Familiar</option>
+                    <option value="fantasia">Fantasía</option>
+                    <option value="guerra">Guerra</option>
+                    <option value="historia">Historia</option>
+                    <option value="horror">Horror</option>
+                    <option value="musical">Musical</option>
+                    <option value="misterio">Misterio</option>
+                    <option value="romance">Romance</option>
+                    <option value="serieTV">Series de TV</option>
+                    <option value="thriller">Thriller</option>
+                    <option value="western">Western</option>
+                </select>
+            </div>
+        </form>
+        <div class="titulo">
+            <span id="generoPeliculas"></span>
+        </div>
+    </nav>        
+
+    <main>
+        <div id="container-paginacion" class="sticky">
+            <button onclick="paginaAnt()"><i class="fa-solid fa-arrow-left" style="color: #ffffff;"></i></button>
+            <span id="pagActual">1</span>
+            <button onclick="paginaSig()"><i class="fa-solid fa-arrow-right" style="color: #ffffff;"></i></button>
+        </div>
+
+        <div id="peliculas"></div>
+
+        <div id="container-paginacion">
+            <button onclick="paginaAnt()">
+                <i class="fa-solid fa-arrow-left" style="color: #ffffff;"></i>
+            </button>
+            <span id="pagActual2">1</span>
+            <button onclick="paginaSig()">
+                <i class="fa-solid fa-arrow-right" style="color: #ffffff;"></i>
+            </button>
+        </div>  
+        
+        <footer>
+            <div class="fotoFooter">
+                <a href="index.html"><img src="img/Pelis night-PhotoRoom.png-PhotoRoom.png" alt="Logo PelisNight" width="100px"></a>
+            </div>              
+            <div class="contactoFooter">
+                <br>
+                <i class="fa-brands fa-instagram" style="color: #000000;"></i> <a href="https://www.instagram.com/francolonelloserra/" target="_blank">francolonelloserra</a><br>
+                <i class="fa-brands fa-whatsapp" style="color: #000000;"></i> +54 9 11 6511-9442<br>
+                <i class="fa-solid fa-envelope" style="color: #000000;"></i> francolonelloserra@gmail.com
+            </div>
+        </footer>   
+    </main>
+
+    <script src="js/scriptIndex.js"></script>     
+    <script>
+        // Función que hace deslizar hacia arriba al logo con una pantalla de entre 767px y 1023px
+        window.addEventListener('scroll', function() {
+            var logo = document.querySelector('.logo');
+            var scrollPosition = window.scrollY;
+
+            if (scrollPosition > 300) {
+                logo.style.top = '-120px';
+            } else {
+                logo.style.top = '0';
+            }
+        });
+    </script>
+</body>
+</html>
+
